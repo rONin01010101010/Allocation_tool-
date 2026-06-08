@@ -1,6 +1,5 @@
 #include <stdbool.h>
 #define header
-#ifndef header
 //leak struct defines what is needed when looking for a leak
 typedef struct {
 unsigned bytes;
@@ -18,4 +17,3 @@ void add(leak_t record);
 void remove(leak_t record);
 void* find(int* ptr);
 
-#endif
