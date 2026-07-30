@@ -10,10 +10,11 @@ int* address;
 } leak_t;
 
 //allocation table that will hold allocation records
-leak_t alloc_table[50];
+leak_t alloc_table[1024];
+static int counter;
 
 //functions to use
-void add(leak_t record);
-void remove(leak_t record);
-void* find(int* ptr);
+void add(void *ptr, size_t size,const char *file, int line);
+void remove(void *ptr);
+void* find(void *ptr);
 
